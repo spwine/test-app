@@ -6,16 +6,30 @@ const downloadBtn = document.getElementById("downloadBtn");
 const frame = document.getElementById("overlay");
 
 // Set up the video stream from the camera
-navigator.mediaDevices
-  // .getUserMedia({ video: true })
-  .getUserMedia({ video: { facingMode: "environment" } })
-  .then((stream) => {
-    video.srcObject = stream;
-    video.play();
-  })
-  .catch((error) => {
-    console.error("Error accessing the camera: ", error);
-  });
+const obs = new IntersectionObserver(
+  (entries) => {
+    const ent = entries[0];
+
+    if (ent.isIntersecting) {
+      navigator.mediaDevices
+        // .getUserMedia({ video: true })
+        .getUserMedia({ video: { facingMode: "environment" } })
+        .then((stream) => {
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch((error) => {
+          console.error("Error accessing the camera: ", error);
+        });
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "0px",
+  }
+);
+obs.observe(video);
 
 // Set canvas size to match the frame (348 x 552 px)
 canvas.width = 348;
