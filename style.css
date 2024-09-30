@@ -2,9 +2,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   height: 100vh;
-  margin: 0;
+  margin-top: 80px;
   font-family: Arial, sans-serif;
   background: rgb(2, 23, 39);
   background: linear-gradient(
@@ -25,15 +25,15 @@ body {
 .frame {
   position: relative;
   width: 348px;
-  height: 552px;
+  height: max-content;
 }
 #video {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 280px;
-  height: 340px;
+  transform: translate(-51%, -53%);
+  width: 254px;
+  height: 408px;
   object-fit: cover;
   z-index: 1;
 }
@@ -42,7 +42,7 @@ body {
   top: 0;
   left: 0;
   width: 348px;
-  height: 552px;
+  height: max-content;
   z-index: 0;
 }
 #canvas {
@@ -50,7 +50,7 @@ body {
 }
 #snapBtn,
 #downloadBtn {
-  margin-top: 20px;
+  margin-top: 320px;
   padding: 10px 20px;
   font-size: 18px;
   background-color: #007bff;

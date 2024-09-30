@@ -35,6 +35,11 @@ obs.observe(video);
 // Set canvas size to match the frame (348 x 552 px)
 canvas.width = 348;
 canvas.height = 552;
+video.width = 260;
+video.height = 344;
+
+const videoX = (canvas.width - 260) / 2; // Center the video horizontally
+const videoY = (canvas.height - 360) / 2; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
@@ -54,7 +59,7 @@ snapBtn.addEventListener("click", () => {
 
     // Draw the video frame on top of the overlay
     if (video.srcObject) {
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      context.drawImage(video, videoX, videoY, video.width, video.height);
     }
 
     // Hide video and show the canvas
