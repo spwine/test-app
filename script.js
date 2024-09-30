@@ -7,9 +7,11 @@ const frame = document.getElementById("overlay");
 
 // Set up the video stream from the camera
 navigator.mediaDevices
-  .getUserMedia({ video: true })
+  // .getUserMedia({ video: true })
+  .getUserMedia({ video: { facingMode: "environment" } })
   .then((stream) => {
     video.srcObject = stream;
+    video.play();
   })
   .catch((error) => {
     console.error("Error accessing the camera: ", error);
