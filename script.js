@@ -40,13 +40,13 @@ canvas.height = 680.83 * window.devicePixelRatio;
 canvas.style.width = `${348}px`;
 canvas.style.height = `${680.83}px`;
 
-video.width = 542;
-video.height = 860;
+video.width = 271 * window.devicePixelRatio;
+video.height = 430 * window.devicePixelRatio;
 // video.style.width = `${254}px`;
 // video.style.height = `${408}px`;
 
-const videoX = 72; // Center the video horizontally
-const videoY = 224; // Center the video vertically
+const videoX = 36 * window.devicePixelRatio; // Center the video horizontally
+const videoY = 112 * window.devicePixelRatio; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
