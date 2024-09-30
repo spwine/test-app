@@ -15,6 +15,7 @@ const obs = new IntersectionObserver(
         // .getUserMedia({ video: true })
         .getUserMedia({ video: { facingMode: "environment" } })
         .then((stream) => {
+          video.setAttribute("playsinline", true);
           video.srcObject = stream;
           video.play();
         })
