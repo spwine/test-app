@@ -55,10 +55,12 @@ snapBtn.addEventListener("click", () => {
 
   frameImage.onload = () => {
     // Draw the frame first on the canvas
+    context.imageSmoothingEnabled = false;
     context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
     // Draw the video frame on top of the overlay
     if (video.srcObject) {
+      context.imageSmoothingEnabled = false;
       context.drawImage(video, videoX, videoY, video.width, video.height);
     }
 
