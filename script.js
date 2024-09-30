@@ -5,7 +5,7 @@ refreshBtn.addEventListener("click", () => {
   // Refresh the browser window
   // window.location.reload();
 
-  video.style.display = "block";
+  video.style.display = "";
   canvas.style.display = "none";
   snapBtn.style.display = "block";
   downloadBtn.style.display = "none";
