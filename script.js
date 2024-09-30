@@ -70,7 +70,7 @@ snapBtn.addEventListener("click", () => {
     frame.style.display = "none";
 
     // Set the download link with the canvas data
-    const dataURL = canvas.toDataURL("image/jpeg");
+    const dataURL = canvas.toDataURL("image/jpeg", 1.0);
     downloadBtn.href = dataURL;
     downloadBtn.download = "photo_with_frame.jpg";
     downloadBtn.textContent = "Download Photo";
