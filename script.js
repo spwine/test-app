@@ -34,12 +34,12 @@ obs.observe(video);
 
 // Set canvas size to match the frame (348 x 552 px)
 canvas.width = 348;
-canvas.height = 552;
-video.width = 260;
-video.height = 344;
+canvas.height = 663.56;
+video.width = 254;
+video.height = 408;
 
 const videoX = (canvas.width - 260) / 2; // Center the video horizontally
-const videoY = (canvas.height - 360) / 2; // Center the video vertically
+const videoY = (canvas.height - 440) / 2; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
