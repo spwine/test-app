@@ -3,65 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Take a Photo with Frame</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: rgb(2, 23, 39);
-        background: linear-gradient(
-          180deg,
-          rgba(2, 23, 39, 1) 33%,
-          rgba(104, 142, 177, 1) 100%
-        );
-      }
-      .frame {
-        position: relative;
-        width: 348px;
-        height: 552px;
-      }
-      #video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 280px;
-        height: 340px;
-        object-fit: cover;
-        z-index: 1;
-      }
-      #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 348px;
-        height: 552px;
-        z-index: 0;
-      }
-      #canvas {
-        display: none;
-      }
-      #snapBtn,
-      #downloadBtn {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-      #snapBtn:active,
-      #downloadBtn:active {
-        background-color: #0056b3;
-      }
-    </style>
   </head>
   <body>
     <div class="frame">
@@ -70,8 +13,9 @@
       <!-- Overlay frame -->
       <img id="overlay" src="Group 1190.jpg" alt="Frame" />
       <!-- Canvas to capture the photo -->
-      <canvas id="canvas"></canvas>
+      <canvas id="canvas" style="display: none"></canvas>
     </div>
+
     <button id="snapBtn">Take a Photo</button>
     <a id="downloadBtn" style="display: none">Download Photo</a>
 

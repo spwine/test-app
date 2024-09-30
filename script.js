@@ -24,7 +24,7 @@ snapBtn.addEventListener("click", () => {
   // Get the canvas context
   const context = canvas.getContext("2d");
 
-  // Ensure the canvas is cleared first
+  // Clear the canvas first
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   // Load the overlay frame and draw it first
@@ -32,23 +32,12 @@ snapBtn.addEventListener("click", () => {
   frameImage.src = frame.src;
 
   frameImage.onload = () => {
-    console.log("Frame image loaded successfully."); // Debugging message
     // Draw the frame first on the canvas
     context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
-    // Check if video is playing and draw it on top of the frame
+    // Draw the video frame on top of the overlay
     if (video.srcObject) {
-      console.log("Video source is available."); // Debugging message
-      context.drawImage(video, 0, 0, 280, 340);
-
-      // Set z-index to ensure video is on top of the frame
-      video.style.zIndex = "2"; // Higher value to ensure it's on top
-      video.style.top = "50%";
-      video.style.left = "50%";
-      video.style.transform = "translate(-50%, -50%)";
-      canvas.style.zIndex = "1"; // Lower value for the canvas
-    } else {
-      console.error("Video source is not available."); // Debugging message
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
     }
 
     // Hide video and show the canvas
