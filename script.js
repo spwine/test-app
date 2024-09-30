@@ -33,13 +33,20 @@ const obs = new IntersectionObserver(
 obs.observe(video);
 
 // Set canvas size to match the frame (348 x 552 px)
-canvas.width = 348;
-canvas.height = 663.56;
-video.width = 254;
-video.height = 408;
+// canvas.width = 348;
+// canvas.height = 663.56;
+canvas.width = 348 * window.devicePixelRatio;
+canvas.height = 663.56 * window.devicePixelRatio;
+canvas.style.width = `${348}px`;
+canvas.style.height = `${663.56}px`;
 
-const videoX = (canvas.width - 260) / 2; // Center the video horizontally
-const videoY = (canvas.height - 440) / 2; // Center the video vertically
+video.width = 254 * window.devicePixelRatio;
+video.height = 408 * window.devicePixelRatio;
+video.style.width = `${254}px`;
+video.style.height = `${408}px`;
+
+const videoX = (canvas.width - 520) / 2; // Center the video horizontally
+const videoY = (canvas.height - 880) / 2; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
@@ -62,12 +69,24 @@ snapBtn.addEventListener("click", () => {
 
   frameImage.onload = () => {
     // Draw the frame first on the canvas
-    context.imageSmoothingEnabled = false;
+    window.addEventListener(
+      "resize",
+      function (e) {
+        context.imageSmoothingEnabled = false;
+      },
+      false
+    );
     context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
     // Draw the video frame on top of the overlay
     if (video.srcObject) {
-      context.imageSmoothingEnabled = false;
+      window.addEventListener(
+        "resize",
+        function (e) {
+          context.imageSmoothingEnabled = false;
+        },
+        false
+      );
       context.drawImage(video, videoX, videoY, video.width, video.height);
     }
 

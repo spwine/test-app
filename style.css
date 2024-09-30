@@ -48,8 +48,8 @@ body {
 }
 #canvas {
   display: none;
-  height: 663.56px;
-  width: 348px;
+  /* height: 663.56px;
+  width: 348px; */
 }
 #snapBtn,
 #downloadBtn {
