@@ -48,10 +48,11 @@ body {
 }
 #canvas {
   display: none;
+  height: 663.56px;
+  width: 348px;
 }
 #snapBtn,
 #downloadBtn {
-  margin-top: 260px;
   padding: 10px 20px;
   font-size: 18px;
   background-color: #007bff;
@@ -63,4 +64,12 @@ body {
 #snapBtn:active,
 #downloadBtn:active {
   background-color: #0056b3;
+}
+
+#snapBtn {
+  margin-top: 260px;
+}
+
+#downloadBtn {
+  margin-top: 10px;
 }

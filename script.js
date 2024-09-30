@@ -49,6 +49,13 @@ snapBtn.addEventListener("click", () => {
   // Clear the canvas first
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  // let rect = canvas.getBoundingClientRect();
+  // canvas.width = rect.width * devicePixelRatio;
+  // canvas.height = rect.height * devicePixelRatio;
+  // context.scale(devicePixelRatio, devicePixelRatio);
+  // canvas.style.width = rect.width + "px";
+  // canvas.style.height = rect.height + "px";
+
   // Load the overlay frame and draw it first
   const frameImage = new Image();
   frameImage.src = frame.src;
