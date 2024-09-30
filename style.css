@@ -4,7 +4,7 @@ body {
   align-items: center;
   /* justify-content: center; */
   height: 100vh;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   font-family: Arial, sans-serif;
   background: rgb(2, 23, 39);
   background: linear-gradient(
@@ -26,6 +26,7 @@ body {
   position: relative;
   width: 348px;
   height: max-content;
+  margin-top: 20px;
 }
 #video {
   position: relative;
@@ -50,7 +51,7 @@ body {
 }
 #snapBtn,
 #downloadBtn {
-  margin-top: 320px;
+  margin-top: 260px;
   padding: 10px 20px;
   font-size: 18px;
   background-color: #007bff;
