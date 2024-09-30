@@ -45,8 +45,8 @@ video.height = 430 * window.devicePixelRatio;
 // video.style.width = `${254}px`;
 // video.style.height = `${408}px`;
 
-const videoX = (canvas.width - 550) / 2; // Center the video horizontally
-const videoY = (canvas.height - 908) / 2; // Center the video vertically
+const videoX = 72; // Center the video horizontally
+const videoY = 224; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
