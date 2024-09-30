@@ -3,7 +3,14 @@ const refreshBtn = document.getElementById("refreshBtn");
 
 refreshBtn.addEventListener("click", () => {
   // Refresh the browser window
-  window.location.reload();
+  // window.location.reload();
+
+  video.style.display = "block";
+  canvas.style.display = "none";
+  snapBtn.style.display = "block";
+  downloadBtn.style.display = "none";
+  refreshBtn.style.display = "none";
+  frame.style.display = "block";
 });
 
 // Get the video element, canvas, overlay frame, and buttons
