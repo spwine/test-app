@@ -42,7 +42,7 @@ body {
   top: 0;
   left: 0;
   width: 348px;
-  height: max-content;
+  height: auto;
   z-index: 0;
 }
 #canvas {
