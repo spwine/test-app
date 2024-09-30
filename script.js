@@ -33,10 +33,10 @@ const obs = new IntersectionObserver(
 obs.observe(video);
 
 // Set canvas size to match the frame (348 x 552 px)
-canvas.width = 348 * window.devicePixelRatio;
-canvas.height = 663.56 * window.devicePixelRatio;
-video.width = 254 * window.devicePixelRatio;
-video.height = 408 * window.devicePixelRatio;
+canvas.width = 348;
+canvas.height = 663.56;
+video.width = 254;
+video.height = 408;
 
 const videoX = (canvas.width - 260) / 2; // Center the video horizontally
 const videoY = (canvas.height - 440) / 2; // Center the video vertically
