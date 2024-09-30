@@ -50,14 +50,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 300px;
-        height: 480px;
-        object-fit: cover;
+        width: 400px;
+        height: 762.71px;
+        /* object-fit: cover; */
         z-index: 99;
       }
       #snapBtn,
       #downloadBtn {
-        margin-top: 20px;
+        margin-top: 120px;
         padding: 10px 20px;
         font-size: 18px;
         background-color: #007bff;
@@ -80,14 +80,11 @@
       <!-- Canvas to display the captured photo -->
       <canvas id="canvas"></canvas>
       <!-- Overlay frame -->
-      <img
-        id="overlay"
-        src="https://ik.imagekit.io/samhee/Group%201190(1).jpg?updatedAt=1727679577638"
-        alt="Frame"
-      />
+      <img id="overlay" src="Group 1190.jpg" alt="Frame" />
     </div>
     <button id="snapBtn">Take a Photo</button>
-    <button id="downloadBtn" style="display: none">Download Photo</button>
+    <!-- <button id="downloadBtn" style="display: none">Download Photo</button> -->
+    <a download id="downloadBtn" style="display: none">Download Photo</a>
 
     <script src="script.js"></script>
   </body>

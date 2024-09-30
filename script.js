@@ -3,6 +3,7 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const snapBtn = document.getElementById("snapBtn");
 const downloadBtn = document.getElementById("downloadBtn");
+const frame = document.getElementById("overlay");
 
 // Set up the video stream from the camera
 navigator.mediaDevices
@@ -30,13 +31,15 @@ snapBtn.addEventListener("click", () => {
   const frameImage = new Image();
   frameImage.src = document.getElementById("overlay").src;
   frameImage.onload = () => {
-    context.drawImage(frameImage, 0, 0, 348, 552);
+    context.drawImage(frameImage, 0, 0, 300, 762.71);
 
     // Show the canvas and hide the video
     video.style.display = "none";
+    video.style.opacity = "0";
     canvas.style.display = "block";
     snapBtn.style.display = "none";
     downloadBtn.style.display = "block";
+    frame.style.display = "none";
   };
 });
 
