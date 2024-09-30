@@ -15,38 +15,34 @@ navigator.mediaDevices
     console.error("Error accessing the camera: ", error);
   });
 
+// Set canvas size to match the frame (348 x 552 px)
+canvas.width = 348;
+canvas.height = 552;
+
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
-  // Set canvas dimensions to match the frame
-  canvas.width = 300;
-  canvas.height = 762.71;
-
   // Get the canvas context
   const context = canvas.getContext("2d");
 
   // Draw the current video frame on the canvas
-  context.drawImage(video, 0, 0, 300, 762.71);
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // Load the overlay frame and draw it on top of the video frame
   const frameImage = new Image();
-  frameImage.src = document.getElementById("overlay").src;
+  frameImage.src = frame.src;
   frameImage.onload = () => {
-    context.drawImage(frameImage, 0, 0, 300, 762.71);
+    context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
-    // Show the canvas and hide the video
+    // Hide video and show the canvas
     video.style.display = "none";
-    video.style.opacity = "0";
     canvas.style.display = "block";
     snapBtn.style.display = "none";
     downloadBtn.style.display = "block";
-    frame.style.display = "none";
-  };
-});
 
-// Download the photo with the frame when the download button is clicked
-downloadBtn.addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.download = "photo_with_frame.jpg";
-  link.href = canvas.toDataURL();
-  link.click();
+    // Set the download link with the canvas data
+    const dataURL = canvas.toDataURL("image/jpeg");
+    downloadBtn.href = dataURL;
+    downloadBtn.download = "photo_with_frame.jpg";
+    downloadBtn.textContent = "Download Photo";
+  };
 });
