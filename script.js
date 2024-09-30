@@ -36,17 +36,17 @@ obs.observe(video);
 // canvas.width = 348;
 // canvas.height = 663.56;
 canvas.width = 348 * window.devicePixelRatio;
-canvas.height = 663.56 * window.devicePixelRatio;
+canvas.height = 680.83 * window.devicePixelRatio;
 canvas.style.width = `${348}px`;
-canvas.style.height = `${663.56}px`;
+canvas.style.height = `${680.83}px`;
 
-video.width = 254 * window.devicePixelRatio;
-video.height = 408 * window.devicePixelRatio;
-video.style.width = `${254}px`;
-video.style.height = `${408}px`;
+video.width = 271 * window.devicePixelRatio;
+video.height = 430 * window.devicePixelRatio;
+// video.style.width = `${254}px`;
+// video.style.height = `${408}px`;
 
-const videoX = (canvas.width - 520) / 2; // Center the video horizontally
-const videoY = (canvas.height - 880) / 2; // Center the video vertically
+const videoX = (canvas.width - 550) / 2; // Center the video horizontally
+const videoY = (canvas.height - 908) / 2; // Center the video vertically
 
 // Take a photo when the button is clicked
 snapBtn.addEventListener("click", () => {
