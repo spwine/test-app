@@ -1,3 +1,11 @@
+// Add event listener for refreshing the page
+const refreshBtn = document.getElementById("refreshBtn");
+
+refreshBtn.addEventListener("click", () => {
+  // Refresh the browser window
+  window.location.reload();
+});
+
 // Get the video element, canvas, overlay frame, and buttons
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
@@ -95,6 +103,7 @@ snapBtn.addEventListener("click", () => {
     canvas.style.display = "block";
     snapBtn.style.display = "none";
     downloadBtn.style.display = "block";
+    refreshBtn.style.display = "block";
     frame.style.display = "none";
 
     // Set the download link with the canvas data
