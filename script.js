@@ -40,8 +40,8 @@ canvas.height = 680.83 * window.devicePixelRatio;
 canvas.style.width = `${348}px`;
 canvas.style.height = `${680.83}px`;
 
-video.width = 271 * window.devicePixelRatio;
-video.height = 430 * window.devicePixelRatio;
+video.width = 542;
+video.height = 860;
 // video.style.width = `${254}px`;
 // video.style.height = `${408}px`;
 
