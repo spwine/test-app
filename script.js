@@ -5,7 +5,7 @@ refreshBtn.addEventListener("click", () => {
   // Refresh the browser window
   // window.location.reload();
 
-  video.style.display = "";
+  video.style.display = "unset";
   canvas.style.display = "none";
   snapBtn.style.display = "block";
   downloadBtn.style.display = "none";
@@ -84,26 +84,26 @@ snapBtn.addEventListener("click", () => {
 
   frameImage.onload = () => {
     // Draw the frame first on the canvas
-    window.addEventListener(
-      "resize",
-      function (e) {
-        context.imageSmoothingEnabled = false;
-      },
-      false
-    );
+    // window.addEventListener(
+    //   "resize",
+    //   function (e) {
+    //     context.imageSmoothingEnabled = false;
+    //   },
+    //   false
+    // );
     context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
     // Draw the video frame on top of the overlay
-    if (video.srcObject) {
-      window.addEventListener(
-        "resize",
-        function (e) {
-          context.imageSmoothingEnabled = false;
-        },
-        false
-      );
-      context.drawImage(video, videoX, videoY, video.width, video.height);
-    }
+    // if (video.srcObject) {
+    //   window.addEventListener(
+    //     "resize",
+    //     function (e) {
+    //       context.imageSmoothingEnabled = false;
+    //     },
+    //     false
+    //   );
+    context.drawImage(video, videoX, videoY, video.width, video.height);
+    // }
 
     // Hide video and show the canvas
     video.style.display = "none";
