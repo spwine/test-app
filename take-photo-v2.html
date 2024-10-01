@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-v2.css" />
+    <title>Take a Photo with Frame</title>
+  </head>
+  <body>
+    <div class="frame">
+      <img id="overlay" src="Subtract (1).png" alt="Frame" />
+      <video id="video" autoplay></video>
+
+      <canvas
+        id="canvas"
+        style="display: none"
+        width="348px"
+        height="663.56px"
+      ></canvas>
+    </div>
+
+    <button id="snapBtn">Take a Photo</button>
+    <div class="button-container">
+      <button id="refreshBtn" style="display: none">Retake</button>
+      <a id="downloadBtn" style="display: none">Download Photo</a>
+    </div>
+
+    <script src="script-v2.js"></script>
+  </body>
+</html>
