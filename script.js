@@ -20,7 +20,7 @@ const snapBtn = document.getElementById("snapBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const frame = document.getElementById("overlay");
 
-video.controls = false;
+// video.controls = false;
 
 // Set up the video stream from the camera
 const obs = new IntersectionObserver(
