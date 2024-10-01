@@ -20,6 +20,8 @@ const snapBtn = document.getElementById("snapBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const frame = document.getElementById("overlay");
 
+video.controls = false;
+
 // Set up the video stream from the camera
 const obs = new IntersectionObserver(
   (entries) => {
@@ -57,6 +59,7 @@ canvas.style.height = `${680.83}px`;
 
 video.width = 271 * window.devicePixelRatio;
 video.height = 430 * window.devicePixelRatio;
+video.height = 430 * window.devicePixelRatio;
 // video.style.width = `${254}px`;
 // video.style.height = `${408}px`;
 
@@ -71,39 +74,18 @@ snapBtn.addEventListener("click", () => {
   // Clear the canvas first
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  // let rect = canvas.getBoundingClientRect();
-  // canvas.width = rect.width * devicePixelRatio;
-  // canvas.height = rect.height * devicePixelRatio;
-  // context.scale(devicePixelRatio, devicePixelRatio);
-  // canvas.style.width = rect.width + "px";
-  // canvas.style.height = rect.height + "px";
-
   // Load the overlay frame and draw it first
   const frameImage = new Image();
   frameImage.src = frame.src;
 
   frameImage.onload = () => {
     // Draw the frame first on the canvas
-    // window.addEventListener(
-    //   "resize",
-    //   function (e) {
-    //     context.imageSmoothingEnabled = false;
-    //   },
-    //   false
-    // );
+
     context.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
     // Draw the video frame on top of the overlay
-    // if (video.srcObject) {
-    //   window.addEventListener(
-    //     "resize",
-    //     function (e) {
-    //       context.imageSmoothingEnabled = false;
-    //     },
-    //     false
-    //   );
+
     context.drawImage(video, videoX, videoY, video.width, video.height);
-    // }
 
     // Hide video and show the canvas
     video.style.display = "none";
